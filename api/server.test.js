@@ -30,7 +30,7 @@ describe("POST /api/auth/register", () => {
     })
     it('should return 500 by missing req.body.password', () => {
         return request(server)
-          .post("/api/auth/login")
+          .post("/api/auth/register")
           .send({ username: "Jenn" })
           .then(res => {
             expect(res.status).toBe(500);
@@ -41,7 +41,7 @@ describe("POST /api/auth/register", () => {
         .post("/api/auth/register")
         .send({ username: "Kelly",password:"123" })
         .then(res => {
-          expect(res.status).toBe(200);
+          expect(res.status).toBe(201);
         });
     });
 });
