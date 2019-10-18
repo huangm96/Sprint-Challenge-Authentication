@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const secret = require('../config/secrets.js')
 
+
 router.post('/register', (req, res) => {
   // implement registration
   const hash = bcrypt.hashSync(req.body.password, 14);

@@ -4,19 +4,20 @@ module.exports = {
     connection: { filename: "./database/auth.db3" },
     useNullAsDefault: true,
     migrations: {
-      directory: "./database/migrations",
-      tableName: "dbmigrations"
-    },
-    seeds: { directory: "./database/seeds" }
+      directory: "./database/migrations"
+      // tableName: "dbmigrations"
+    }
+    
   },
   testing: {
     client: "sqlite3",
     connection: {
-      filename: "./data/test.db3"
+      filename: "./database/test1.db3"
     },
     useNullAsDefault: true,
     migrations: {
-      directory: "./data/migrations"
+      directory: "./database/migrations"
+     
     }
   }
 };
