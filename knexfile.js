@@ -2,11 +2,26 @@
 
 module.exports = {
   development: {
-    client: "sqlite3",
-    connection: {
+    client: "pg",
+     connection: {
       filename: "./database/users.db3"
     },
     useNullAsDefault: true,
+    migrations: {
+      directory: "./database/migrations"
+    }
+  },
+  staging: {
+    client: "pg",
+    connection: {
+      host:'127.0.0.1',
+      database: "user_test1",
+      
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
     migrations: {
       directory: "./database/migrations"
     }
@@ -23,14 +38,8 @@ module.exports = {
   },
   production: {
     client: "pg",
-    connection: {
-      host: "localhost",
-      port: 5432,
-      user: "postgres",
-      password: "Huang86481673",
-      database: "user_test"
-    },
-     migrations: {
+    connection: process.env.DATABASE_URL,
+    migrations: {
       directory: "./database/migrations"
     },
     seeds: {
