@@ -10,22 +10,8 @@ module.exports = {
     migrations: {
       directory: "./database/migrations"
     }
-  },
-  staging: {
-    client: "pg",
-    connection: {
-      host:'127.0.0.1',
-      database: "user_test1",
-      
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      directory: "./database/migrations"
-    }
-  },
+  }
+  ,
   testing: {
     client: "sqlite3",
     connection: {
@@ -50,4 +36,4 @@ module.exports = {
       max: 10
     }
   }
-};
+}[process.env.NODE_ENV || "development"];
