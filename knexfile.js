@@ -36,4 +36,5 @@ module.exports = {
       max: 10
     }
   }
-}[process.env.NODE_ENV || "development"];
+}
+//[process.env.NODE_ENV || "development"];
